@@ -7,8 +7,9 @@ export default class ProductList extends Component {
       return (
         <div key={element.id} className="col-4 mb-4">
           <ProductItem
-            element={element}
+            item={element}
             getProductDetail={this.props.getProductDetail}
+            addToCart={this.props.addToCart}
           />
         </div>
       );

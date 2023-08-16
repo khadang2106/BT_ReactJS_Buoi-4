@@ -44,6 +44,7 @@ a {
 .product-item .price-rating {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .product-item .actions {
   position: absolute;
@@ -109,12 +110,15 @@ a {
 .actions-btn button {
   font-size: 14px;
 }
-.actions .btn-primary {
+.actions .btn-primary,
+#shoppingCart .checkout-btn {
   background-color: #2953e8;
   border-color: #2953e8;
 }
 .actions .btn-primary:hover,
-.actions .btn-primary:focus {
+.actions .btn-primary:focus,
+#shoppingCart .checkout-btn:hover,
+#shoppingCart .checkout-btn:focus {
   background-color: #1740d4;
   border-color: #163dc8;
 }
@@ -122,6 +126,71 @@ a {
 /* Modal */
 #productDetail .detail-title {
   font-weight: 600;
+}
+
+/* Cart */
+.cart {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  margin-left: 5px;
+}
+.cart .cart-btn {
+  margin-left: 5px;
+  position: relative;
+}
+.cart .cart-btn:focus {
+  box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+.cart-btn i {
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease;
+}
+.cart-btn:hover i {
+  color: #2953e8;
+}
+.cart .cart-item-qty {
+  color: white;
+  background: #2953e8;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  right: 0px;
+  padding-left: 1px;
+}
+#shoppingCart .table td,
+#shoppingCart .table th {
+  vertical-align: revert;
+}
+#shoppingCart .table td {
+  font-size: 14px;
+}
+#shoppingCart .qty-btn {
+  color: white;
+  background: #a4a4a4;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+}
+#shoppingCart .qty-btn:focus {
+  box-shadow: none;
+}
+#shoppingCart .sub-total {
+  font-weight: bold;
+  text-align: right;
+  color: #2953e8;
+}
+#shoppingCart .table .empty-card-announce {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* Responsive */
@@ -134,11 +203,32 @@ a {
   }
 }
 @media screen and (max-width: 992px) {
+  .navbar-nav {
+    gap: 10px;
+  }
+  .navbar-nav .nav-item {
+    font-size: 15px;
+  }
   .actions .actions-btn {
     left: 10%;
   }
   .actions-btn button {
     font-size: 9px;
+  }
+  .product-item .card-title a {
+    font-size: 1rem;
+  }
+  #shoppingCart .table th,
+  #shoppingCart .table td {
+    font-size: 0.8rem;
+  }
+  #shoppingCart .qty-btn {
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+  }
+  #productDetail .table h2 {
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -150,5 +240,54 @@ a {
   .actions-btn button {
     padding: 5px;
     font-size: 8px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .product-item .card-text {
+    font-size: 0.9rem;
+  }
+  .ratings i {
+    font-size: 12px;
+  }
+  #productDetail .modal-title {
+    font-size: 1.75rem;
+  }
+  #productDetail .table h2 {
+    font-size: 1.25rem;
+  }
+  #productDetail .table td {
+    font-size: 0.9rem;
+  }
+  #shoppingCart .table .empty-card-announce {
+    font-size: 1.25rem;
+  }
+  #shoppingCart .modal-footer button {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (max-width: 510px) {
+  .actions-btn button {
+    padding: 5px;
+    font-size: 7px;
+  }
+  #productDetail .table td {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 468px) {
+  .actions .actions-btn {
+    gap: 3px;
+    left: 6%;
+    bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 449px) {
+  .actions-btn button {
+    padding: 4px;
+  }
+}
+@media screen and (max-width: 437px) {
+  .actions-btn button {
+    padding: 3px;
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cart from './Cart';
 
 export default class Header extends Component {
   render() {
@@ -56,6 +57,13 @@ export default class Header extends Component {
               </li>
             </ul>
           </div>
+
+          <Cart
+            cartList={this.props.cartList}
+            handleRemove={this.props.handleRemove}
+            handleCartQuantity={this.props.handleCartQuantity}
+            handleCheckOut={this.props.handleCheckOut}
+          />
         </nav>
       </div>
     );

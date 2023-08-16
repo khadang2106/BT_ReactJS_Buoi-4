@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class ProductItem extends Component {
   render() {
-    const { name, price, image } = this.props.element;
+    const { name, price, image } = this.props.item;
 
     return (
       <div className="card product-item">
@@ -13,14 +13,19 @@ export default class ProductItem extends Component {
           <div className="actions">
             <div className="actions-btn d-flex">
               <button
-                onClick={() => this.props.getProductDetail(this.props.element)}
+                onClick={() => this.props.getProductDetail(this.props.item)}
                 className="btn btn-primary"
                 data-toggle="modal"
                 data-target="#productDetail"
               >
                 Show Detail
               </button>
-              <button className="btn btn-primary">Add To Cart</button>
+              <button
+                onClick={() => this.props.addToCart(this.props.item)}
+                className="btn btn-primary"
+              >
+                Add To Cart
+              </button>
             </div>
           </div>
         </div>
